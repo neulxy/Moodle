@@ -137,6 +137,26 @@ namespace Moodle.Controllers
         }
 
 
+        /// <summary>
+        /// Show the details of an enrollment
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Enroll enroll = enrollBL.FindEnroll(id.Value);
+            if (enroll == null)
+            {
+                return HttpNotFound();
+            }
+            EnrollViewModel enrollVM = new EnrollViewModel(enroll);
+            return View(enrollVM);
+        }
+
 
     }
 }
