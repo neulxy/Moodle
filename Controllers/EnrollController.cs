@@ -79,6 +79,11 @@ namespace Moodle.Controllers
                 }
                 else
                     ModelState.AddModelError("", "The enrollment has already existed.");
+
+                //Another way to implement such an error notice
+                //ModelState.AddModelError("EnrollExistError", "The enrollment has already existed.");
+                //    @Html.ValidationMessage("EnrollExistError", new { @class = "text-danger" })
+
             }
 
 
@@ -117,7 +122,6 @@ namespace Moodle.Controllers
             {
                 return HttpNotFound();
             }
-            ///////////////////// to be continued
             EnrollViewModel enrollVM = new EnrollViewModel(enroll);
             return View(enrollVM);
         }

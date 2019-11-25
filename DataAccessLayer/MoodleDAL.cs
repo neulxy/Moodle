@@ -16,11 +16,14 @@ namespace DataAccessLayer
             modelBuilder.Entity<Course>().ToTable("Course");
             modelBuilder.Entity<Student>().ToTable("Student");
             modelBuilder.Entity<Enroll>().ToTable("Enroll");
+            modelBuilder.Entity<User>().ToTable("User");
             base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Course> Courses { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Enroll> Enrolls { get; set; }
+        public DbSet<User> Users { get; set; }
+
     }
 }
