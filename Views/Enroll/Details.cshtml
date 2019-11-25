@@ -1,8 +1,8 @@
 ﻿@using ViewModels;
-@model StudentViewModel
+@model EnrollViewModel
 
 @{
-    ViewBag.Title = "Student Information Details";
+    ViewBag.Title = "Enrollment Details";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -16,8 +16,7 @@
         <dd>
             @Html.DisplayFor(model => model.StuId)
         </dd>
-    </dl>
-    <dl class="dl-horizontal">
+
         <dt>
             @Html.DisplayNameFor(model => model.StuName)
         </dt>
@@ -25,9 +24,41 @@
         <dd>
             @Html.DisplayFor(model => model.StuName)
         </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Semester)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Semester)
+        </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
