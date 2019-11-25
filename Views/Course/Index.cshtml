@@ -1,0 +1,36 @@
+﻿@using ViewModels;
+@model CourseListViewModel
+
+
+@{
+    ViewBag.Title = "Course Index";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>No.</th>
+        <th>Course Code</th>
+        <th>Course Name</th>
+        <th></th>
+    </tr>
+    @{ int i = 0;}
+    @foreach (CourseViewModel item in Model.Courses)
+    {
+        i++;
+<tr>
+    <td>@i</td>
+    <td>@item.CourseCode</td>
+    <td>@item.CourseName</td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.CourseId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
+    </td>
+</tr>
+    }
+</table>
+

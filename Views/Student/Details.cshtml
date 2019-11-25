@@ -1,0 +1,33 @@
+﻿@using ViewModels;
+@model StudentViewModel
+
+@{
+    ViewBag.Title = "Student Information Details";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StuId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StuId)
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StuName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StuName)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
