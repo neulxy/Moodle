@@ -16,8 +16,11 @@ namespace Moodle.Controllers
         /// An instance of StudentBusinessLayer
         /// </summary>
         private StudentBusinessLayer stuBL = new StudentBusinessLayer();
+
+
         /// GET: Available student list
-        /// 
+        ///
+        [Authorize]
         public ActionResult Index()
         {
             StudentListViewModel stuListVM = new StudentListViewModel();

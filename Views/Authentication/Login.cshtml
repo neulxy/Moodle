@@ -1,56 +1,39 @@
-﻿@model MVCDemo.Models.UserDetails
-@using MVCDemo.Extensions
-
+﻿@model BusinessEntities.UserDetails
 @{
-    Layout = null;
+    ViewBag.Title = "Login";
 }
 
-<!DOCTYPE html>
-
-<html>
-
-<head>
-
-    <meta name="viewport" content="width=device-width" />
-
-    <title>Login</title>
-    @Scripts.Render("~/bundles/jqueryValidation")
+<h2>@ViewBag.Title</h2>
 
 
-</head>
+    @using (Html.BeginForm("DoLogin", "Authentication", FormMethod.Post))
+    {
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", htmlAttributes: new { @class = "text-danger" })
 
-<body>
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-    <div>
-        @Html.ValidationMessage("CredentialError", new { style = "color:red;" })
-        @using (Html.BeginForm("DoLogin", "Authentication", FormMethod.Post))
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        {
-
-            @Html.LabelFor(c => c.UserName)
-
-            @Html.TextBoxFor(x => x.UserName)
-            @Html.ValidationMessageFor(x => x.UserName)
-
-
-
-            <br />
-
-            @Html.LabelFor(c => c.Password)
-
-            @Html.PasswordFor(x => x.Password)
-
-            <br />
-
-
-            <input type="submit" name="BtnSubmit" value="Login" />
-            @Html.Submit("Login");
-
-        }
-
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Login" class="btn btn-default" />
+            </div>
+        </div>
     </div>
+    }
 
-</body>
 
-</html>
 
