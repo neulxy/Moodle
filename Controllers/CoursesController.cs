@@ -11,6 +11,8 @@ using DataAccessLayer;
 
 namespace Moodle.Controllers
 {
+    //This is a auto generated controller by ASP.NET
+    //which would not be used in this application
     public class CoursesController : Controller
     {
         private MoodleDAL db = new MoodleDAL();

@@ -15,7 +15,7 @@ namespace Moodle.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "About the Author";
 
             return View();
         }

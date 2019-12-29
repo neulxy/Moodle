@@ -50,7 +50,6 @@ C:\Projects\Moodle\bin\Newtonsoft.Json.xml
 C:\Projects\Moodle\bin\Antlr3.Runtime.pdb
 C:\Projects\Moodle\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Projects\Moodle\obj\Debug\Moodle.csprojAssemblyReference.cache
-C:\Projects\Moodle\obj\Debug\Moodle.csproj.CoreCompileInputs.cache
 C:\Projects\Moodle\obj\Debug\Moodle.csproj.CopyComplete
 C:\Projects\Moodle\obj\Debug\Moodle.dll
 C:\Projects\Moodle\obj\Debug\Moodle.pdb
@@ -58,3 +57,9 @@ C:\Projects\Moodle\bin\EntityFramework.dll
 C:\Projects\Moodle\bin\EntityFramework.SqlServer.dll
 C:\Projects\Moodle\bin\EntityFramework.xml
 C:\Projects\Moodle\bin\EntityFramework.SqlServer.xml
+C:\Projects\Moodle\bin\System.Net.Http.Formatting.dll
+C:\Projects\Moodle\bin\System.Web.Http.dll
+C:\Projects\Moodle\bin\System.Web.Http.WebHost.dll
+C:\Projects\Moodle\bin\System.Net.Http.Formatting.xml
+C:\Projects\Moodle\bin\System.Web.Http.xml
+C:\Projects\Moodle\bin\System.Web.Http.WebHost.xml

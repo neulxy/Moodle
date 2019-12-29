@@ -1,6 +1,8 @@
 ﻿using BusinessEntities;
 using BusinessLayer;
+using Moodle.Security;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -24,6 +26,12 @@ namespace Moodle.Controllers
             if (userBL.IsValidUser(u))
             {
                 FormsAuthentication.SetAuthCookie(u.UserName, false);
+                Session["UserName"] = u.UserName;
+                Session["UserId"] = u.Id;
+                Session["Roles"] = userBL.GetRoles(u.UserName);
+                //MoodlePrincipal moodlePrincipal = new MoodlePrincipal(u.UserName, u.Password);
+                //moodlePrincipal.RoleList = new ArrayList(userBL.GetRoles(u.UserName).Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries));
+                //HttpContext.User = moodlePrincipal;
                 return RedirectToAction("Index", "Student");
             }
             else

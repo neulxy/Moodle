@@ -19,6 +19,8 @@ namespace BusinessEntities
 
         [Display(Name = "Password"),Required]
         public string Password { get; set; }
+
+        public string Roles { get; set; }
     }
 
 }

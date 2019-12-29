@@ -1,5 +1,6 @@
 ﻿using BusinessEntities;
 using BusinessLayer;
+using Moodle.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace Moodle.Controllers
 
         /// GET: Available student list
         ///
-        [Authorize]
+        //[Authorize]
         public ActionResult Index()
         {
             StudentListViewModel stuListVM = new StudentListViewModel();
@@ -40,7 +41,7 @@ namespace Moodle.Controllers
         }
 
 
-        // GET: Courses/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();

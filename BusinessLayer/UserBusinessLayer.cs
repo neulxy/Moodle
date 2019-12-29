@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -39,6 +40,20 @@ namespace BusinessLayer
             return user;
         }
 
+        /// <summary>
+        /// Get the roles of a user using UserName
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        public string GetRoles(string userName)
+        {
+            List<User> resultList = moodleDAL.Users.Where(item => item.UserName == userName).ToList();
+            if (resultList.Count > 0)
+                return resultList.ElementAt(0).Roles;
+            else
+                return null;
+        }
+
         public bool IsValidUser(User u)
         {
             if (moodleDAL.Users.Where(item => item.UserName==u.UserName && item.Password== u.Password).ToList().Count>0)
@@ -50,6 +65,8 @@ namespace BusinessLayer
                 return false;
             }
         }
+
+        
 
 
         //public void SaveEditStudent(Student student)

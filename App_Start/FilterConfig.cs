@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using Moodle.Security;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Moodle
@@ -8,6 +9,7 @@ namespace Moodle
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new MoodleAuthorizeAttribute());
         }
     }
 }
